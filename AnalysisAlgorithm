@@ -1,0 +1,33 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+class HelloWorld {
+    public int findSum(int n)
+    {
+        return n*(n+1)/2;
+    }
+    public int findSumAltAlgo(int n)
+    {
+        int sum =0 ;
+        for(int i = 1; i <=n ; i++)
+        {
+            sum += i;
+        }
+        return sum;
+    }
+    public static void main(String[] args) 
+    {
+        System.out.println("Please enter the Integer: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        double now = System.currentTimeMillis();
+        HelloWorld hw = new HelloWorld();
+        System.out.println(hw.findSum(n));
+        System.out.println("Time taken - " + (System.currentTimeMillis()-now)+ " milliseconds. ");
+        
+        double now2 = System.currentTimeMillis();
+        System.out.println(hw.findSumAltAlgo(n));
+        System.out.println("Time taken - " + (System.currentTimeMillis()-now2)+ " milliseconds. ");
+    }
+}
