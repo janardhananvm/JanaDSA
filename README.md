@@ -1,2 +1,2 @@
 # JanaDSA
-consists of Java Program on Data Structures
+Consists of Java Program on Data Structures
