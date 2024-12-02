@@ -1,0 +1,50 @@
+import java.util.*;
+
+
+class Codechef
+{
+	public static void main (String[] args) 
+	{
+		// your code goes here
+		int arr[] = {0,3,5,7,11,25,43,66,745};
+		int target = 25;
+        int pos = ans(arr, target);
+		System.out.println(pos);
+		System.out.print(arr[pos]);
+	}
+	
+	static int ans(int [] arr, int  target)
+	{
+	    int start = 0;
+	    int end = 1;
+	    int newstart = 0;
+	    while( target > arr[end])
+	    {
+	        newstart = end + 1;
+	        end = end + (end - start + 1);
+	        start = newstart;
+	    }
+	    return binarySearch(arr, target, start, end);
+	}
+
+	static int binarySearch(int arr[], int target, int start, int end)
+	{
+	    while(start <= end)
+	    {
+	        int mid = (start + (end -start)/2);
+	        if(target == arr[mid])
+	        {
+	            return mid;
+	        }
+	        else if(target < arr[mid])
+	        {
+	            end = mid;
+	        }
+	        else
+	        {
+	            start = mid + 1;    
+	        }
+	    }
+	    return -1;
+	}
+}
